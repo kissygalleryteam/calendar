@@ -2,10 +2,12 @@
     "name": "calendar",
     "version": "1.1",
     "author": {
-        "name": "angtian.fgm",
-        "email": "angtian.fgm@taobao.com"
+        "name": "昂天",
+        "email": "fgm@fgm.cc",
+        "page": "https://github.com/fugm"
     },
-    "date": "",
+    "cover": "http://img01.taobaocdn.com/tps/i1/T1j.yqXwXbXXaD7ArL-264-188.png",
+    "desc": "旅行日历组件",
     "fileoverview": "Calendar是一个为旅行业务量身定制的日历组件",
     "list": "./index.html, ./README.md, ./{version}/index.js, ./{version}/assets/index.css, ./{version}/guide/index.md"
 }
