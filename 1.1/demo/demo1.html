@@ -3,20 +3,25 @@
 <head>
     <meta charset="utf-8" />
     <title>KISSY gallery - Calendar</title>
-    <script src="http://a.tbcdn.cn/s/kissy/1.3.0/seed-min.js"></script>
+    <script src="http://a.tbcdn.cn/s/kissy/1.3.0/kissy-min.js" charset="utf-8"></script>
     <link rel="stylesheet" href="tmp/style.css" />
     <script>
-    KISSY.config({
-        packages:[
-            {
-                name   : 'gallery',
-                tag    : '20130418',
-                path   : '../../../../',  // cdn上适当修改对应路径
-                charset: 'utf-8'
-            }
-        ],
-        debug: true
-    });
+    var S = KISSY;
+
+    if(S.Config.debug) {
+        var srcPath = '../../../';
+      
+        S.config({
+            packages:[
+                {
+                    name:'gallery',
+                    path:srcPath,
+                    charset:'utf-8',
+                    ignorePackageNameInUri:true
+                }
+            ]
+        });
+    }
     </script>
 </head>
 <body>
@@ -45,7 +50,7 @@
 </div>
 <div id="J_Example"></div>
 <script>
-KISSY.use('gallery/calendar/1.1/index', function(S, Calendar) {
+S.use('gallery/calendar/1.1/index', function(S, Calendar) {
     var $ = S.all;
 
     /**
