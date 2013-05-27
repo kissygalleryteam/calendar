@@ -8,7 +8,7 @@
  * E-mail: Angtian.fgm@taobao.com
  */
 
-KISSY.add('gallery/calendar/1.1/index', function (S, Node, Base) {
+KISSY.add(function (S, Node, Base) {
 
     /**
      * 支持静态日历展示
@@ -111,6 +111,36 @@ KISSY.add('gallery/calendar/1.1/index', function (S, Node, Base) {
                 WIN.on('resize', this._setPos, this);
 
                 return this;
+            },
+
+            /**
+             * 删除事件绑定
+             * 
+             * @method datechEvent
+             */
+            detachEvent: function() {
+                this.detach('afterMessageChange', this._setMessage);
+                this.boundingBox.detach();
+                DOC.undelegate('focusin', '.' + this._triggerNodeClassName, this._DELEGATE.focusin, this);
+                DOC.undelegate('keyup', '.' + this._triggerNodeClassName, this._DELEGATE.keyup, this);
+                DOC.undelegate('keydown', '.' + this._triggerNodeClassName, this._DELEGATE.keydown, this);
+                DOC.undelegate('click', '.' + this._triggerNodeIcon, this._DELEGATE.iconClick, this);
+                DOC.undelegate('click', '.' + this._triggerNodeClassName, this._DELEGATE.triggerNodeClick, this);
+                WIN.detach('resize', this._setPos, this);
+            },
+
+            /**
+             * 销毁日历组件
+             * 
+             * @method destroy
+             */
+            destroy: function() {
+
+                // 删除所有绑定事件
+                this.detachEvent();
+
+                // 删除DOM
+                this.boundingBox.remove();
             },
 
             /**
@@ -271,7 +301,8 @@ KISSY.add('gallery/calendar/1.1/index', function (S, Node, Base) {
              */
             _getDateStatus: function (v) {
                 return (this.get('minDate') && Calendar.DATE.parse(v) < Calendar.DATE.parse(this.get('minDate'))) ||
-                    (this.get('maxDate') && Calendar.DATE.parse(v) > Calendar.DATE.parse(this.get('maxDate')));
+                       (this.get('maxDate') && Calendar.DATE.parse(v) > Calendar.DATE.parse(this.get('maxDate'))) ||
+                       (S.inArray(v, this.get('disabled')));
             },
 
             /**
@@ -655,7 +686,7 @@ KISSY.add('gallery/calendar/1.1/index', function (S, Node, Base) {
                         case target.hasClass('close-btn'):
                             this.hide();
                             break;
-                        case target && target.hasClass(this._delegateClickClassName) && this.boundingBox.hasClass('calendar-bounding-box-style') && date == this.get('minDate'):
+                        case target && target.hasClass(this._delegateClickClassName) && this.boundingBox.hasClass('calendar-bounding-box-style') && date == this.get('minDate') && !this.get('isSameDate'):
                             break;
                         case !!date && !target.hasClass('disabled'):
                             this.get('container') || this.hide();
@@ -1512,6 +1543,28 @@ KISSY.add('gallery/calendar/1.1/index', function (S, Node, Base) {
                  */
                 isAutoSwitch: {
                     value: false
+                },
+
+                /**
+                 * 是否允许开始时间和结束时间相同
+                 *
+                 * @attribute isSameDate
+                 * @type {Boolean}
+                 * @default false
+                 */
+                isSameDate: {
+                    value: false
+                },
+
+                /**
+                 * 禁止点击的日期数组
+                 *
+                 * @attribute disabled
+                 * @type {Array} ['YYYY-MM-DD']
+                 * @default []
+                 */
+                disabled: {
+                    value: []
                 }
             }
         });

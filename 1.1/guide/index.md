@@ -143,6 +143,12 @@ Calendar类接受一个参数，即组件属性配置。
             <td>放置日历的容器。非弹出式日历必选配置</td>
         </tr>
         <tr>
+            <td>disabled</td>
+            <td>Array</td>
+            <td>[]</td>
+            <td>禁止点击的日期数组 ['2013-05-01']</td>
+        </tr>
+        <tr>
             <td>isSelect</td>
             <td>Boolean</td>
             <td>false</td>
@@ -165,6 +171,12 @@ Calendar类接受一个参数，即组件属性配置。
             <td>Boolean</td>
             <td>true</td>
             <td>是否显示节假日信息</td>
+        </tr>
+        <tr>
+            <td>isSameDate</td>
+            <td>Boolean</td>
+            <td>false</td>
+            <td>是否允许开始时间和结束时间相同</td>
         </tr>
     </tbody>
 </table>
