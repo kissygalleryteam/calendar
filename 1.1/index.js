@@ -1569,4 +1569,4 @@ KISSY.add(function (S, Node, Base) {
             }
         });
 
-}, {requires: ['node', 'base', 'sizzle', './calendar.css']});
+}, {requires: ['node', 'base', 'sizzle', './assets/index.css']});

@@ -1575,4 +1575,4 @@ KISSY.add('gallery/calendar/1.1/index',function (S, Node, Base) {
             }
         });
 
-}, {requires: ['node', 'base', 'sizzle', './calendar.css']});
+}, {requires: ['node', 'base', 'sizzle', './assets/index.css']});
