@@ -37,7 +37,10 @@ module.exports = function(grunt) {
         // 压缩文件和入口文件一一对应
         uglify: {
             options: {
-                banner: '<%= banner %>'
+                banner: '<%= banner %>',
+                beautify: {
+                    ascii_only: true
+                }
             },
             base: {
                 files: {

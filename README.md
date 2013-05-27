@@ -23,3 +23,5 @@ Calendar是一个为旅行业务量身定制的日历组件
 ### V1.1 change
 
     [!] 修复Firefox浏览器使用select控件选择年份/月份时日历隐藏的bug
+    [!] 增加disable属性。{Array} - 可选，禁止点击的日期数组["2013-05-01", "2013-05-20"]
+    [!] 增加isSameDate属性。{Boolean} - 可选，是否允许开始时间和结束时间相同，默认false
