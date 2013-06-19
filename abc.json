@@ -9,5 +9,6 @@
         "page": "https://github.com/fugm"
     },
     "type": "kissy-pie",
-    "type-url": "http://abc.alibaba-inc.com/r/kissy-pie"
+    "type-url": "http://abc.alibaba-inc.com/r/kissy-pie",
+    "githubName": "fugm"
 }
