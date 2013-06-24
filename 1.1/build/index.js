@@ -200,11 +200,14 @@ KISSY.add('gallery/calendar/1.1/index',function (S, Node, Base) {
              * @method show
              */
             show: function () {
-                DOC.on('click', this._clickoutside, this);
-
                 this.boundingBox.show();
                 this._setDefaultDate().render();
                 this.fire('show', {'node': this.currentNode});
+
+                S.later(function() {
+                    DOC.on('click', this._clickoutside, this);
+                }, 100, false, this);
+
                 return this;
             },
 
