@@ -1654,5 +1654,5 @@ KISSY.add(function(S, Node, Base, DateTool, Holidays) {
     return Calendar;
 
 }, {
-    requires: ['node', 'base', './datetools', './holidays', './index.css']
+    requires: ['node', 'base', './datetools', './holidays', './assets/index.css']
 });
