@@ -2,11 +2,11 @@
 
 Calendar是一个为旅行业务量身定制的日历组件
 
-- 版本：1.1（基于kissy1.3，兼容kissy1.2）
+- 版本：1.2（基于kissy1.3，兼容kissy1.2）
 - 作者：昂天
-- [Calendar指南](./1.1/guide/index.md)
-- [Demo1](./1.1/demo/demo1.html)
-- [Demo2](./1.1/demo/demo2.html)
+- [Calendar指南](./1.2/guide/index.md)
+- [Demo1](./1.2/demo/demo1.html)
+- [Demo2](./1.2/demo/demo2.html)
 
 #### Calendar的特性
 
@@ -19,6 +19,14 @@ Calendar是一个为旅行业务量身定制的日历组件
 * 触发节点支持selector批量设置，共享日历实例
 
 ## 组件变更
+
+### V1.2 change
+
+    [!] 抽离日期工具模块
+    [!] 抽离节假日信息模块
+    [!] 修改弹出日历自动适配显示位置（页面宽/高-->可视区域宽/高）
+    [!] 增加setDateInfo方法（设置日期信息）
+    [!] 优化日历性能
 
 ### V1.1 change
 
