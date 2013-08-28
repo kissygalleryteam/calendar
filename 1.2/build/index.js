@@ -1938,5 +1938,5 @@ KISSY.add('gallery/calendar/1.2/index',function(S, Node, Base, DateTool, Holiday
     return Calendar;
 
 }, {
-    requires: ['node', 'base', './datetools', './holidays', './assets/index.css']
+    requires: ['node', 'base', './datetools', './holidays', './index.css']
 });
