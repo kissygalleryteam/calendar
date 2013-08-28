@@ -629,22 +629,23 @@ KISSY.add('gallery/calendar/1.2/index',function(S, Node, Base, DateTool, Holiday
         getDateInfo: function(v) {
             var self = this;
 
+            var date = Calendar.DATE.stringify(Calendar.DATE.parse(v));
             var iDiff = -1;
             var sNowDate = Calendar.DATE.stringify(new Date);
             var sDateName = ['今天', '明天', '后天'];
 
             switch (true) {
-                case v == sNowDate:
+                case date == sNowDate:
                     iDiff = 0;
                     break;
-                case v == Calendar.DATE.siblings(sNowDate, 1):
+                case date == Calendar.DATE.siblings(sNowDate, 1):
                     iDiff = 1;
                     break;
-                case v == Calendar.DATE.siblings(sNowDate, 2):
+                case date == Calendar.DATE.siblings(sNowDate, 2):
                     iDiff = 2;
                     break;
             }
-            return this._dateMap && this._dateMap[v] || sDateName[iDiff] || Calendar.DATE.week(v);
+            return this._dateMap && this._dateMap[date] || sDateName[iDiff] || Calendar.DATE.week(date);
         },
 
         /**
@@ -727,10 +728,11 @@ KISSY.add('gallery/calendar/1.2/index',function(S, Node, Base, DateTool, Holiday
          * 触发元素赋值
          *
          * @method _setValue
-         * @param  {String} v 日期字符串
+         * @param  {String}  v   日期字符串
+         * @param  {Boolean} set 是否给输入框赋值
          * @private
          */
-        _setValue: function(v) {
+        _setValue: function(v, set) {
             var self = this;
 
             // 设置日历已选择日期
@@ -742,7 +744,7 @@ KISSY.add('gallery/calendar/1.2/index',function(S, Node, Base, DateTool, Holiday
             }
 
             // 如果触发元素是输入框，设置值
-            if (self._isInput(self.currentNode)) {
+            if (self._isInput(self.currentNode) && !set) {
                 self.currentNode.val(v);
             }
 
@@ -1264,18 +1266,16 @@ KISSY.add('gallery/calendar/1.2/index',function(S, Node, Base, DateTool, Holiday
 
                 var date = target.val();
 
-                self._setDateInfo(date);
+                if (Calendar.DATE.isDate(date)) {
+                    self._setDateInfo(date);
+                    self.keyupTimer = setTimeout(function() {
+                        var d = Calendar.DATE.parse(date);
 
-                if (!Calendar.DATE.isDate(date)) {
-                    return;
+                        self.set('date', d);
+                        self._setValue(Calendar.DATE.stringify(d), true);
+                        self.render();
+                    }, 200);
                 }
-
-                self.keyupTimer = setTimeout(function() {
-                    var date = Calendar.DATE.stringify(Calendar.DATE.parse(date));
-                    self._setValue(date);
-                    self.set('date', date);
-                    self.render();
-                }, 200);
             },
 
             // 输入框Tab事件处理函数
