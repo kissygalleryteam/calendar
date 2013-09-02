@@ -1599,10 +1599,10 @@ KISSY.add('gallery/calendar/1.2/index',function(S, Node, Base, DateTool, Holiday
         + '<div class="calendar-input-wrap" />',
 
         START_DATE_TEMPLATE: ''
-        + '<span class="calendar-start-icon {delegate_icon}" />',
+        + '<span class="calendar-icon calendar-start-icon {delegate_icon}" />',
 
         END_DATE_TEMPLATE: ''
-        + '<span class="calendar-end-icon {delegate_icon}" />',
+        + '<span class="calendar-icon calendar-end-icon {delegate_icon}" />',
 
         ATTRS: {
 
