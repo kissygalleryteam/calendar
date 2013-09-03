@@ -230,7 +230,7 @@
     outline: none;
 }
 
-.calendar-input-wrap span {
+.calendar-input-wrap .calendar-icon {
     position: absolute;
     cursor: text;
     top: 50%;
