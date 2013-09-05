@@ -18,8 +18,8 @@ Calendar是一个为旅行业务量身定制的日历组件
 
 ## 组件Demo
 
-* [静态日历，基本参数配置使用演示](../demo/demo1.html)
-* [酒店/机票应用演示](../demo/demo2.html)
+* [酒店/机票应用演示](../demo/demo1.html)
+* [静态日历，基本参数配置使用演示](../demo/demo2.html)
 
 ## 组件快速上手
 
@@ -232,7 +232,12 @@ Calendar类接受一个参数，即组件属性配置。
             <td>hidemessage</td>
             <td>{}</td>
             <td>隐藏提示信息后触发</td>
-        </tr>       
+        </tr>
+        <tr>
+            <td>selectchange</td>
+            <td>{}.year：年份<br />{}.month：月份</td>
+            <td>select切换后触发</td>
+        </tr>
     </tbody>
 </table>
 
