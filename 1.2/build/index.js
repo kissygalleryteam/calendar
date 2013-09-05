@@ -1188,8 +1188,16 @@ KISSY.add('gallery/calendar/1.2/index',function(S, Node, Base, DateTool, Holiday
 
                 var selectList = self.boundingBox.all('.' + self._delegateChangeClassName);
 
-                self.set('date', selectList.item(0).val() + '-' + selectList.item(1).val() + '-01');
+                var year = selectList.item(0).val();
+                var month = selectList.item(1).val();
+
+                self.set('date', year + '-' + month + '-01');
                 self.render();
+
+                self.fire('selectchange', {
+                    year: year,
+                    month: month
+                });
 
                 // fix火狐浏览器对select操作时，触发clickoutside的bug
                 self._hide = false;
