@@ -1191,6 +1191,12 @@ KISSY.add('gallery/calendar/1.2/index',function(S, Node, Base, DateTool, Holiday
                 var year = selectList.item(0).val();
                 var month = selectList.item(1).val();
 
+                var maxDate = self.get('maxDate');
+
+                if (maxDate && maxDate.substr(0, 4) == year) {
+                    month = Calendar.DATE.filled(Math.min(month, maxDate.substr(5, 2)))
+                }
+
                 self.set('date', year + '-' + month + '-01');
                 self.render();
 
@@ -1399,12 +1405,19 @@ KISSY.add('gallery/calendar/1.2/index',function(S, Node, Base, DateTool, Holiday
             select_template['year_template'] = '';
             select_template['month_template'] = '';
 
-            if (curYear != minYear) {
-                minMonth = 1;
-                maxMonth = 12;
+            switch (true) {
+                case curYear == minYear:
+                    maxMonth = 12;
+                    break;
+                case curYear == maxYear:
+                    minMonth = 1;
+                    break;
+                default:
+                    minMonth = 1;
+                    maxMonth = 12;
             }
 
-            for (var i = maxYear; i >= minYear; i--) {
+            for (var i = minYear; i <= maxYear; i++) {
                 select_template['year_template'] += '<option' + (curYear == i ? selected : '') + ' value="' + i + '">' + i + '</option>';
             }
             for (var i = minMonth; i <= maxMonth; i++) {
