@@ -1114,7 +1114,12 @@ KISSY.add(function(S, Node, Base, DateTool, Holidays) {
             select_template['delegate_change'] = self._delegateChangeClassName;
             select_template['year_template'] = '';
             select_template['month_template'] = '';
-            curYear == minYear || curYear == maxYear || (minMonth = 1, maxMonth = 12);
+
+            if (curYear != minYear) {
+                minMonth = 1;
+                maxMonth = 12;
+            }
+
             for (var i = maxYear; i >= minYear; i--) {
                 select_template['year_template'] += '<option' + (curYear == i ? selected : '') + ' value="' + i + '">' + i + '</option>';
             }
