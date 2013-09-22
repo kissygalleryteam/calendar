@@ -49,6 +49,9 @@ KISSY.add(function(S, Node, Base, DateTool, Holidays) {
             // 渲染日历
             self.renderUI();
 
+            // 如果结构渲染失败，直接退出
+            if (!self.boundingBox) return;
+
             // 最小日期缓存
             self._minDateCache = self.get('minDate');
 
@@ -98,7 +101,13 @@ KISSY.add(function(S, Node, Base, DateTool, Holidays) {
 
             (container || $('body')).append(self._initCalendarHTML(self.get('date')));
 
-            self.boundingBox = S.one('#' + self._calendarId).css('position', container ? 'relative' : 'absolute');
+            self.boundingBox = S.one('#' + self._calendarId);
+
+            // 如果结构渲染失败，直接退出
+            if (!self.boundingBox) return;
+
+            self.boundingBox.css('position', container ? 'relative' : 'absolute');
+
             self._dateBox = self.boundingBox.one('.date-box');
             self._contentBox = self.boundingBox.one('.content-box');
             self._messageBox = self.boundingBox.one('.message-box');
