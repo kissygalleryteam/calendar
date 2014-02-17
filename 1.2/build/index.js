@@ -309,7 +309,7 @@ KISSY.add('gallery/calendar/1.2/index',function(S, Node, Base, DateTool, Holiday
         Calendar.superclass.constructor.apply(self, arguments);
 
         // 初始化组件
-        self.initializer();
+        self._initializer();
     }
 
     S.extend(Calendar, Base, {
@@ -317,9 +317,10 @@ KISSY.add('gallery/calendar/1.2/index',function(S, Node, Base, DateTool, Holiday
         /**
          * 日历初始化
          *
-         * @method initializer
+         * @method _initializer
+         * @private
          */
-        initializer: function() {
+        _initializer: function() {
             var self = this;
 
             // 如果配置显示节假日，生成日期数据
@@ -558,14 +559,14 @@ KISSY.add('gallery/calendar/1.2/index',function(S, Node, Base, DateTool, Holiday
 
             self.boundingBox.hide();
             self.hideMessage();
-            
+
             if (self.currentNode) {
                 self.currentNode.getDOMNode()._selected = null;
             }
-            
+
             self._cacheNode = null;
             self._hide = true;
-            
+
             self.fire('hide', {
                 'node': self.currentNode
             });
@@ -600,7 +601,7 @@ KISSY.add('gallery/calendar/1.2/index',function(S, Node, Base, DateTool, Holiday
 
             self._messageBox.removeClass('visible');
             self.fire('hidemessage');
-            
+
             return self;
         },
 
@@ -724,7 +725,7 @@ KISSY.add('gallery/calendar/1.2/index',function(S, Node, Base, DateTool, Holiday
 
             // IE6兼容处理
             if (S.UA.ie == 6) {
-                boundingBox.one('iframe').css({            
+                boundingBox.one('iframe').css({
                     width: boundingBox.outerWidth(),
                     height: boundingBox.outerHeight()
                 });
@@ -1013,7 +1014,7 @@ KISSY.add('gallery/calendar/1.2/index',function(S, Node, Base, DateTool, Holiday
                     if (iTop > iMaxTop) iTop = t < 0 ? iTop : t;
                     if (iLeft > iMaxLeft) iLeft = l < 0 ? iLeft : l;
                 })(iTop - iBoundingBoxHeight - iCurrentNodeHeight, iLeft + iCurrentNodeWidth - iBoundingBoxWidth);
-                
+
                 boundingBox.css({
                     top: iTop,
                     left: iLeft
@@ -1057,7 +1058,7 @@ KISSY.add('gallery/calendar/1.2/index',function(S, Node, Base, DateTool, Holiday
                 // 如果触发元素为输入框，添加autocomplete属性
                 if (self._isInput(triggerNode)) {
                     triggerNode.attr('autocomplete', 'off');
-                } 
+                }
             });
 
             // 创建结束触发元素外容器
@@ -1534,7 +1535,7 @@ KISSY.add('gallery/calendar/1.2/index',function(S, Node, Base, DateTool, Holiday
 
             //tbody template string
             var body_template = '';
-            var days_array = []; 
+            var days_array = [];
             for (; firstDays--;) {
                 days_array.push(0);
             }
@@ -1566,15 +1567,15 @@ KISSY.add('gallery/calendar/1.2/index',function(S, Node, Base, DateTool, Holiday
 
             //thead string
             table_template['head_template'] = week_template;
-            
+
             //tbody string
             table_template['body_template'] = body_template;
-            
+
             //single Calendar object
             var single_calendar_template = {};
             single_calendar_template['date'] = self.get('isSelect') ? self._createSelect() : iYear + '年' + iMonth + '月';
             single_calendar_template['table_template'] = TMP(Calendar.TABLE_TEMPLATE, table_template);
-            
+
             //return single Calendar template object
             return single_calendar_template;
         }
