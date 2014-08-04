@@ -7,4 +7,4 @@ KISSY.add(function (S, Node,Demo) {
         })
     });
 
-},{requires:['node','kg/calendar/2.0.1/']});
+},{requires:['node','kg/calendar/2.0.0/']});

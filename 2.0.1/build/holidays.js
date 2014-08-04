@@ -1,8 +1,8 @@
 /*
 combined files : 
 
-kg/calendar/2.0.1/datetools
-kg/calendar/2.0.1/holidays
+kg/calendar/2.0.0/datetools
+kg/calendar/2.0.0/holidays
 
 */
 /**
@@ -10,7 +10,7 @@ kg/calendar/2.0.1/holidays
  * @author 昂天<fgm@fgm.cc>
  * @module datetools
  **/
-KISSY.add('kg/calendar/2.0.1/datetools',function(S) {
+KISSY.add('kg/calendar/2.0.0/datetools',function(S) {
 
     var REG = /\d+/g;
 
@@ -120,7 +120,7 @@ KISSY.add('kg/calendar/2.0.1/datetools',function(S) {
  * @author 昂天<fgm@fgm.cc>
  * @module holidays
  **/
-KISSY.add('kg/calendar/2.0.1/holidays',function (S, DateTools) {
+KISSY.add('kg/calendar/2.0.0/holidays',function (S, DateTools) {
 
 // 2013——2020年节假日数据
 var holidays = {
