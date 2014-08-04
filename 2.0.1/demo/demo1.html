@@ -36,23 +36,33 @@
     </form>
 </div>
 <script>
-var S = KISSY;
-
-if (S.Config.debug) {
-    var srcPath = "../../../";
+    var S = KISSY;
     S.config({
         packages:[
             {
-                name:"gallery",
-                path:srcPath,
+                name:"kg",
+                path:"http://g.tbcdn.cn/kg/",
                 charset:"utf-8",
                 ignorePackageNameInUri:true
             }
         ]
     });
-}
 
-S.use('kg/calendar/2.0.0//index', function(S, Calendar) {
+    if (S.Config.debug) {
+        var srcPath = "../";
+        S.config({
+            packages:[
+                {
+                    name:"kg/calendar/2.0.1",
+                    path:srcPath,
+                    charset:"utf-8",
+                    ignorePackageNameInUri:true
+                }
+            ]
+        });
+    }
+
+S.use('kg/calendar/2.0.1//index', function(S, Calendar) {
     var $ = S.all;
 
     /**

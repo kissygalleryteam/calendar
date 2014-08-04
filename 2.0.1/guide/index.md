@@ -42,7 +42,7 @@ kissy1.3就不需要该配置。
 ### 1.加载Calendar模块
 
 ```
-KISSY.use('kg/calendar/2.0.0//index', function(S, Calendar) {
+KISSY.use('kg/calendar/2.0.1//index', function(S, Calendar) {
 
 });
 ```
