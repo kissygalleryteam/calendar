@@ -2,8 +2,7 @@
 
 Calendar是一个为旅行业务量身定制的日历组件
 
-* 版本：1.2
-* 基于：kissy1.3（兼容kissy1.2，不兼容kissy1.1.6）
+* 版本：2.0.1
 * 作者：昂天
 
 #### Calendar的特性
@@ -23,26 +22,26 @@ Calendar是一个为旅行业务量身定制的日历组件
 
 ## 组件快速上手
 
-kissy1.2下需要gallery的包配置：
+kissy1.4.6以下版本需要kg的包配置：
 
 ```
 KISSY.config({
     packages:[
         {
-            name   : 'gallery',
-            path   : 'http://a.tbcdn.cn/s/kissy/',
+            name   : 'kg',
+            path   : 'http://g.tbcdn.cn/kg/',
             charset: 'utf-8'
         }
     ]
 });
 ```
 
-kissy1.3就不需要该配置。
+kissy1.4.6就不需要该配置。
 
 ### 1.加载Calendar模块
 
 ```
-KISSY.use('kg/calendar/2.0.1//index', function(S, Calendar) {
+KISSY.use('kg/calendar/2.0.1/index', function(S, Calendar) {
 
 });
 ```
@@ -51,7 +50,7 @@ KISSY.use('kg/calendar/2.0.1//index', function(S, Calendar) {
 ### 2.初始化Calendar
 
 ```
-KISSY.use('kg/calendar/2.0.0//index', function(S, Calendar) {
+KISSY.use('kg/calendar/2.0.2/index', function(S, Calendar) {
     var calendar = new Calendar(cfg);
 });
 ```
@@ -83,7 +82,7 @@ Calendar类接受一个参数，即组件属性配置。
             <td>日历个数</td>
         </tr>
         <tr>
-            <td>selectDate</td>
+            <td>selectedDate</td>
             <td>String</td>
             <td>null</td>
             <td>选择的日期</td>
