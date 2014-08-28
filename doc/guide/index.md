@@ -2,7 +2,7 @@
 
 Calendar是一个为旅行业务量身定制的日历组件
 
-* 版本：2.0.1
+* 版本：2.0.2
 * 作者：昂天
 
 #### Calendar的特性
@@ -41,7 +41,7 @@ kissy1.4.6就不需要该配置。
 ### 1.加载Calendar模块
 
 ```
-KISSY.use('kg/calendar/2.0.1/index', function(S, Calendar) {
+KISSY.use('kg/calendar/2.0.2/index', function(S, Calendar) {
 
 });
 ```

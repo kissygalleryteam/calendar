@@ -1,7 +1,7 @@
 /*
 combined files : 
 
-kg/calendar/2.0.2/datetools
+kg/calendar/2.0.2/src/datetools
 
 */
 /**
@@ -9,7 +9,7 @@ kg/calendar/2.0.2/datetools
  * @author 昂天<fgm@fgm.cc>
  * @module datetools
  **/
-KISSY.add('kg/calendar/2.0.2/datetools',function(S) {
+KISSY.add('kg/calendar/2.0.2/src/datetools',function(S) {
 
     var REG = /\d+/g;
 

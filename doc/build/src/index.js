@@ -1,9 +1,9 @@
 /*
 combined files : 
 
-kg/calendar/2.0.2/datetools
-kg/calendar/2.0.2/holidays
-kg/calendar/2.0.2/index
+kg/calendar/2.0.2/src/datetools
+kg/calendar/2.0.2/src/holidays
+kg/calendar/2.0.2/src/index
 
 */
 /**
@@ -11,7 +11,7 @@ kg/calendar/2.0.2/index
  * @author 昂天<fgm@fgm.cc>
  * @module datetools
  **/
-KISSY.add('kg/calendar/2.0.2/datetools',function(S) {
+KISSY.add('kg/calendar/2.0.2/src/datetools',function(S) {
 
     var REG = /\d+/g;
 
@@ -121,7 +121,7 @@ KISSY.add('kg/calendar/2.0.2/datetools',function(S) {
  * @author 昂天<fgm@fgm.cc>
  * @module holidays
  **/
-KISSY.add('kg/calendar/2.0.2/holidays',function (S, DateTools) {
+KISSY.add('kg/calendar/2.0.2/src/holidays',function (S, DateTools) {
 
 // 2013——2020年节假日数据
 var holidays = {
@@ -287,7 +287,7 @@ return {
  * @author 昂天<fgm@fgm.cc>
  * @module calendar
  **/
-KISSY.add('kg/calendar/2.0.2/index',function(S, Node, Base, DateTool, Holidays) {
+KISSY.add('kg/calendar/2.0.2/src/index',function(S, Node, Base, DateTool, Holidays) {
 
     var $ = Node.all;
     var TMP = S.substitute;

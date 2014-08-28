@@ -1,13 +1,45 @@
-## calendar
+# Calendar
 
-* 版本：2.0.0
-* 教程：[http://gallery.kissyui.com/calendar/2.0.0/guide/index.html](http://gallery.kissyui.com/calendar/2.0.0/guide/index.html)
-* demo：[http://gallery.kissyui.com/calendar/2.0.0/demo/index.html](http://gallery.kissyui.com/calendar/2.0.0/demo/index.html)
+Calendar是一个为旅行业务量身定制的日历组件
 
-## changelog
+- 版本：2.0.2
+- 作者：昂天
+- [Calendar指南](./2.0.2/guide/index.md)
+- [Demo1](./2.0.2/demo/demo1.html)
+- [Demo2](./2.0.2/demo/demo2.html)
 
-### V2.0.0
+#### Calendar的特性
 
-    [!]
+* 支持静态日历展示
+* 支持弹出式日历展示
+* 支持多日历展示
+* 支持节假日信息展示
+* 支持显示节假日前1~3天，后1~3天日期信息
+* 支持日期操作范围限定
+* 触发节点支持selector批量设置，共享日历实例
 
+## 组件变更
 
+### V2.0.2 change
+    [!] 更新图片资源地址，支持https跟http
+
+### V2.0.1 change
+    [!] 组件迁移gitlab
+
+### V1.2 change
+
+    [!] 抽离日期工具模块
+    [!] 抽离节假日信息模块
+    [!] 修改弹出日历自动适配显示位置（页面宽/高-->可视区域宽/高）
+    [!] 增加setDateInfo方法（设置日期信息）
+    [!] 优化日历性能
+    [!] 修复下拉框选择日期，设置maxDate，选择最大年份时月份显示不全的bug
+    [!] 修改下拉框年份为正序排列
+    [+] 增加selectchange事件
+
+### V1.1 change
+
+    [!] 修复Firefox浏览器使用select控件选择年份/月份时日历隐藏的bug
+    [!] 增加disable属性。{Array} - 可选，禁止点击的日期数组["2013-05-01", "2013-05-20"]
+    [!] 增加isSameDate属性。{Boolean} - 可选，是否允许开始时间和结束时间相同，默认false
+    [!] 修改国庆节/中秋节为同一天时，优先显示国庆节

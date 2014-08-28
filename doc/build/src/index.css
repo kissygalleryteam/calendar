@@ -1,6 +1,6 @@
 /**
  * 淘宝旅行通用日历组件
- *
+ * 
  * Author: Angtian
  * E-mail: Angtian.fgm@taobao.com
  */
@@ -65,7 +65,7 @@
     cursor: pointer;
     margin-top: -19px;
     text-indent: -99999px;
-    background: #FFF url(//gtms03.alicdn.com/tps/i3/T1upvrXbFdXXbRt4oj-57-106.png) 0 0 no-repeat;
+    background: #FFF url(http://img03.taobaocdn.com/tps/i3/T1upvrXbFdXXbRt4oj-57-106.png) 0 0 no-repeat;
 }
 
 .calendar-bounding-box .content-box .arrow span.close-btn {
@@ -165,7 +165,7 @@
     color: #404040;
     line-height: 22px;
     text-decoration: none;
-    background: #FFF url(//gtms01.alicdn.com/tps/i1/T1MwfeXdFsXXcLztbA-149-292.png) -9999px -9999px no-repeat;
+    background: #FFF url(http://img01.taobaocdn.com/tps/i1/T1MwfeXdFsXXcLztbA-149-292.png) -9999px -9999px no-repeat;
 }
 
 .calendar-bounding-box td.disabled a {
@@ -240,7 +240,7 @@
     overflow: hidden;
     margin-top: -7.5px;
     font: 400 12px/15px Arial;
-    background: url(//gtms03.alicdn.com/tps/i3/T1upvrXbFdXXbRt4oj-57-106.png) -999px -999px no-repeat;
+    background: url(http://img03.taobaocdn.com/tps/i3/T1upvrXbFdXXbRt4oj-57-106.png) -999px -999px no-repeat;
 }
 
 .calendar-input-wrap .calendar-start-icon {
