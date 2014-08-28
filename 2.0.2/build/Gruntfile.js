@@ -1,7 +1,7 @@
 /*
 combined files : 
 
-kg/calendar/2.0.1/Gruntfile
+kg/calendar/2.0.2/Gruntfile
 
 */
 module.exports = function(grunt) {
